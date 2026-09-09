@@ -1,0 +1,17 @@
+{
+  "name": "pushdocs-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The PushDocs website at pushdocs.github.io",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "check": "node --check site/app.js && node scripts/check.mjs"
+  }
+}

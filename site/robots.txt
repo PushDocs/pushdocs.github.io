@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pushdocs.github.io/sitemap.xml
