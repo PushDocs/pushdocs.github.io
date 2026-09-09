@@ -199,21 +199,6 @@ document.querySelector("#reset-demo").addEventListener("click", () => {
   source.focus({ preventScroll: true });
   announce("Пример восстановлен. Вы можете снова изменить текст.");
 });
-document.querySelector("[data-try-demo]").addEventListener("click", (event) => {
-  event.preventDefault();
-  selectTab("editor");
-  setPreview(false);
-  source.focus({ preventScroll: true });
-  document
-    .querySelector("#demo")
-    .scrollIntoView({
-      block: "center",
-      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "instant"
-        : "smooth",
-    });
-});
-
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector("#mobile-nav");
 function closeMenu() {
