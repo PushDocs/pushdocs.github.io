@@ -1,6 +1,6 @@
 # PushDocs website
 
-The Russian landing page for [PushDocs](https://github.com/PushDocs/PushDocs), a self-hosted CMS for Docusaurus repositories in GitHub and GitLab.
+The Russian landing page for [PushDocs](https://github.com/PushDocs/PushDocs), a self-hosted CMS for Docusaurus projects in GitHub and GitLab. The landing leads with installation on your own server, editing existing content and preserving the project’s Git review and publishing workflow.
 
 Website: https://pushdocs.github.io/
 
@@ -32,7 +32,7 @@ The workflow follows the [GitHub Pages custom workflow guide](https://docs.githu
 
 Edit `site/index.html` for page content, `site/styles.css` for layout, and `site/app.js` for the interactive example. The website uses Russian copy, Golos Text for body text, and Unbounded for headings. Fonts are hosted locally, with their SIL Open Font Licenses in `site/assets/fonts/`.
 
-The interactive editor is an illustrative demo. It supports headings, lists, bold text and inline code. It stores a draft in browser local storage, compares it with a fixed source document and shows an example review. It never connects to a Git provider or executes HTML or MDX. Reset removes the saved draft. Storage failures leave the editor usable for the current page session.
+The interactive editor is an illustrative demo. It shows Markdown editing beside a live preview, with buttons for headings, lists and bold text. It also renders inline code. It stores a draft in browser local storage, compares it with a fixed source document and shows an example review. It explains that publication follows approval through the connected project’s existing publishing process. It never connects to a Git provider or executes HTML or MDX. Reset removes the saved draft. Storage failures leave the editor usable for the current page session.
 
 Installation commands are intended for local evaluation. Production configuration is documented in the main project. Product claims and limitations come from the main project's README.
 

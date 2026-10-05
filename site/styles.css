@@ -186,12 +186,12 @@ textarea:focus-visible,
 }
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1.02fr;
+  grid-template-columns: 0.9fr 1.15fr;
   align-items: center;
   gap: 42px;
-  padding-top: 71px;
-  padding-bottom: 98px;
-  min-height: 706px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: 620px;
 }
 .eyebrow {
   display: flex;
@@ -216,8 +216,8 @@ textarea:focus-visible,
   box-shadow: 0 0 0 4px #7654e80d;
 }
 .hero h1 {
-  font: 600 clamp(42px, 4.5vw, 65px) / 1.2 var(--display);
-  letter-spacing: -3.1px;
+  font: 600 clamp(34px, 3.4vw, 49px) / 1.25 var(--display);
+  letter-spacing: -2px;
   margin: 0 0 28px;
   position: relative;
   z-index: 1;
@@ -244,6 +244,42 @@ textarea:focus-visible,
   margin: 0 0 28px;
   letter-spacing: -0.2px;
 }
+.hero-context {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 450px;
+  margin: -12px 0 28px;
+}
+.demo-format {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-block: 1px solid var(--line);
+  background: #fbfaff;
+}
+.demo-format button {
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: var(--lilac);
+  font-size: 11px;
+}
+.demo-format button:hover { background: #ddd2fa; }
+.demo-format > span { margin-left: auto; font-size: 9px; color: var(--muted); }
+.demo-input, .demo-output { width: 50%; min-width: 0; display: flex; flex-direction: column; }
+.demo-input { border-right: 1px solid var(--line); background: #fcfbfe; }
+.demo-input label, .preview-label { padding: 10px 16px 0; font-size: 9px; color: var(--muted); }
+.preview-only .demo-output { width: 100%; }
+.knowledge-section { padding: 35px 0 50px; border-top: 1px solid var(--line); }
+.knowledge-intro h2 { font: 500 clamp(22px, 2.3vw, 32px)/1.5 var(--display); letter-spacing: -1px; margin: 0; }
+.knowledge-intro > p:last-child { font-size: 15px; color: var(--muted); margin-bottom: 30px; }
+.knowledge-usecases { margin: 30px 0 0; font-size: 13px; color: var(--muted); }
+.knowledge-examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.knowledge-examples article { border-left: 2px solid #c8b8f4; padding-left: 20px; }
+.knowledge-examples .icon { color: var(--violet); }
+.knowledge-examples h3 { font-size: 16px; margin: 10px 0 8px; }
+.knowledge-examples p { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0; }
 .hero-actions {
   display: flex;
   align-items: center;
@@ -338,7 +374,7 @@ textarea:focus-visible,
   border-radius: 12px;
   box-shadow: 0 18px 55px #3d285419;
   overflow: hidden;
-  transform: rotate(-1.3deg);
+  transform: none;
   transition: transform 0.4s;
 }
 .hero-visual:focus-within .demo-window,
@@ -464,22 +500,9 @@ textarea:focus-visible,
 }
 .editor-body {
   display: flex;
-  height: 281px;
+  height: 265px;
   position: relative;
   border-bottom: 1px solid var(--line);
-}
-.line-numbers {
-  padding: 10px 12px 15px 21px;
-  color: #b3a9c1;
-  font:
-    11px/21px ui-monospace,
-    SFMono-Regular,
-    Consolas,
-    monospace;
-  overflow: hidden;
-  text-align: right;
-  border-right: 1px solid #f2eff7;
-  user-select: none;
 }
 #demo-source {
   border: 0;
@@ -494,7 +517,7 @@ textarea:focus-visible,
     monospace;
   width: 100%;
   height: 100%;
-  white-space: pre;
+  white-space: pre-wrap;
   overflow: auto;
   border-radius: 0;
   tab-size: 2;
@@ -504,7 +527,7 @@ textarea:focus-visible,
   outline-width: 2px;
 }
 .markdown-preview {
-  padding: 6px 28px 22px;
+  padding: 6px 20px 22px;
   overflow: auto;
   flex: 1;
   overflow-wrap: anywhere;
@@ -676,7 +699,7 @@ textarea:focus-visible,
   margin-left: auto;
 }
 .diff-content {
-  height: 281px;
+  height: 265px;
   overflow: auto;
   padding: 14px 0 20px;
   font:
@@ -2504,6 +2527,22 @@ h2 {
     padding-bottom: 22px;
     gap: 12px;
   }
+}
+@media (max-width: 600px) {
+  .hero-actions { gap: 18px; flex-wrap: wrap; }
+  .hero-context { font-size: 12px; }
+  .editor-body { height: auto; min-height: 340px; flex-direction: column; }
+  .demo-input, .demo-output { width: 100%; }
+  .demo-input { border-right: 0; border-bottom: 1px solid var(--line); }
+  #demo-source { height: 190px; font-size: 12px; line-height: 1.6; }
+  .demo-output { min-height: 230px; }
+  .markdown-preview { max-height: 330px; }
+  .demo-format > span { font-size: 8px; }
+  .knowledge-examples { grid-template-columns: 1fr; gap: 24px; }
+  .knowledge-intro h2 { font-size: 21px; }
+  .knowledge-intro h2 br { display: none; }
+  .knowledge-intro > p:last-child { font-size: 13px; }
+  .knowledge-section { padding-top: 30px; padding-bottom: 35px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html {

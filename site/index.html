@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f6f4fc" />
-    <title>PushDocs — пишите доки, храните в Git</title>
+    <title>PushDocs — self-hosted CMS для Docusaurus</title>
     <meta
       name="description"
-      content="Редактируйте документацию Docusaurus в браузере, обсуждайте правки и отправляйте их на ревью в GitHub или GitLab. PushDocs — CMS с открытым кодом для вашего сервера."
+      content="Self-hosted CMS для Docusaurus с открытым кодом. Разверните PushDocs на своём сервере, подключите GitHub или GitLab и редактируйте документацию с командой."
     />
     <link rel="canonical" href="https://pushdocs.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="PushDocs" />
-    <meta property="og:title" content="PushDocs — пишите доки, храните в Git" />
+    <meta property="og:title" content="PushDocs — self-hosted CMS для Docusaurus" />
     <meta
       property="og:description"
-      content="Удобно редакторам. Привычно разработчикам. Открытая CMS для документации Docusaurus."
+      content="CMS для документации Docusaurus на вашем сервере. Редактор, предпросмотр и проверка изменений через GitHub или GitLab."
     />
     <meta property="og:url" content="https://pushdocs.github.io/" />
     <meta
@@ -123,31 +123,21 @@
       <section class="hero container" aria-labelledby="hero-title">
         <div class="hero-copy">
           <div class="eyebrow">
-            <span class="status-dot"></span> OPEN SOURCE CMS ДЛЯ DOCUSAURUS
+            <span class="status-dot"></span> ОТКРЫТЫЙ КОД · ВАШ СЕРВЕР
           </div>
           <h1 id="hero-title">
-            Пишите доки.<br />
-            Храните<br />
-            в
-            <span class="git-word"
-              >Git.<svg viewBox="0 0 218 20" aria-hidden="true">
-                <path d="M4 14C68 2 143 2 212 9M31 18C91 9 152 9 186 13" /></svg
-            ></span>
+            Self-hosted<br />CMS для<br /><span class="git-word">Docusaurus.</span>
           </h1>
           <p class="hero-description">
-            Удобно редакторам. Привычно разработчикам.<br
-              class="desktop-break"
-            />
-            Правьте документацию в браузере и отправляйте<br
-              class="desktop-break"
-            />
-            изменения на ревью в GitHub или GitLab.
+            Разверните PushDocs на своём сервере и дайте команде
+            редактор для вашего сайта на Docusaurus. Пишите инструкции,
+            добавляйте изображения и отправляйте изменения на проверку.
           </p>
+          <p class="hero-context">Подключите существующий репозиторий в GitHub или GitLab.
+            Документы остаются в Git, а черновики и доступы — под вашим управлением.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#start"
-              >Развернуть PushDocs<svg class="icon">
-                <use href="#i-arrow" /></svg
-            ></a>
+            <a class="button primary" href="#start">Развернуть CMS<svg class="icon"><use href="#i-arrow" /></svg></a>
+            <a class="text-link" href="#demo">Попробовать редактор</a>
           </div>
           <div class="hero-note">
             <svg class="icon"><use href="#i-check" /></svg>Ваш сервер
@@ -158,7 +148,7 @@
         <div class="hero-visual" id="demo">
           <div class="floating-file" aria-hidden="true">
             <svg class="icon"><use href="#i-file" /></svg
-            >getting-started.mdx<span>+12 −3</span>
+            >Инструкция для пользователей<span>Черновик</span>
           </div>
           <div class="demo-window">
             <div class="demo-topbar">
@@ -168,10 +158,10 @@
                   alt=""
                   width="22"
                   height="22"
-                />Acme Docs</span
+                />База знаний конструктора</span
               ><span class="branch-label"
                 ><svg class="icon"><use href="#i-branch" /></svg
-                >docs/getting-started</span
+                >Черновик</span
               ><span class="avatar" aria-label="Пример участника">A</span>
             </div>
             <div
@@ -207,7 +197,7 @@
                 tabindex="-1"
                 data-tab="review"
               >
-                <span>03</span> Ревью
+                <span>03</span> На проверку
               </button>
             </div>
             <div
@@ -219,45 +209,41 @@
               <div class="editor-bar">
                 <span
                   ><svg class="icon"><use href="#i-file" /></svg
-                  >getting-started.md</span
+                  >Как создать первую форму</span
                 ><button id="preview-toggle" type="button" aria-pressed="false">
-                  Предпросмотр <span aria-hidden="true">◉</span>
+                  Только предпросмотр <span aria-hidden="true">◉</span>
                 </button>
               </div>
+              <div class="demo-format" role="group" aria-label="Форматирование текста">
+                <button type="button" data-format="heading" aria-label="Добавить заголовок">H2</button>
+                <button type="button" data-format="bold" aria-label="Выделить жирным"><strong>Ж</strong></button>
+                <button type="button" data-format="list" aria-label="Добавить пункт списка">☷ Список</button>
+                <span>Markdown + предпросмотр</span>
+              </div>
               <div class="editor-body">
-                <div class="line-numbers" aria-hidden="true">
-                  1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12
+                <div class="demo-input">
+                  <label for="demo-source">Текст инструкции</label>
+                  <textarea id="demo-source" spellcheck="true" maxlength="5000"># Как создать первую форму
+
+Соберите форму для регистрации на мероприятие.
+
+## Добавьте поля
+
+- Имя участника
+- Электронная почта
+
+Нажмите **Сохранить**, чтобы продолжить.</textarea>
                 </div>
-                <label class="sr-only" for="demo-source"
-                  >Текст документа. Измените Markdown и откройте
-                  предпросмотр.</label
-                >
-                <textarea id="demo-source" spellcheck="false" maxlength="5000">
-# Начнём с хорошей документации
-
-Всё, что нужно вашей команде,
-в одном месте.
-
-## Первый шаг
-
-- Подключите репозиторий
-- Откройте документ
-- Добавьте что-то полезное
-
-**Готово к вашим идеям.**</textarea
-                >
-                <div
-                  id="markdown-preview"
-                  tabindex="0"
-                  class="markdown-preview"
-                  hidden
-                ></div>
+                <div class="demo-output">
+                  <span class="preview-label">Так выглядит страница</span>
+                  <div id="markdown-preview" tabindex="0" class="markdown-preview" aria-label="Предпросмотр инструкции"></div>
+                </div>
               </div>
               <div class="editor-bottom">
                 <span id="draft-status"
                   ><span class="tiny-dot"></span>Черновик в этом браузере</span
                 ><button class="mini-button" type="button" data-next="changes">
-                  К изменениям <svg class="icon"><use href="#i-arrow" /></svg>
+                  Проверить правки <svg class="icon"><use href="#i-arrow" /></svg>
                 </button>
               </div>
             </div>
@@ -271,7 +257,7 @@
               <div class="editor-bar">
                 <span
                   ><svg class="icon"><use href="#i-file" /></svg
-                  >getting-started.md</span
+                  >Как создать первую форму</span
                 ><span class="diff-stat" id="diff-stat"></span>
               </div>
               <div
@@ -283,7 +269,7 @@
               <div class="editor-bottom">
                 <span>Сравните правки перед отправкой</span
                 ><button class="mini-button" type="button" data-next="review">
-                  К ревью <svg class="icon"><use href="#i-arrow" /></svg>
+                  Передать на проверку <svg class="icon"><use href="#i-arrow" /></svg>
                 </button>
               </div>
             </div>
@@ -299,21 +285,21 @@
                   ><svg class="icon"><use href="#i-branch" /></svg>Пример pull
                   request</span
                 >
-                <h3>Обновить начало работы</h3>
+                <h3>Обновить инструкцию для конструктора</h3>
                 <p>
-                  <code>docs/getting-started</code
+                  <code>docs/update-guide</code
                   ><span aria-hidden="true"> → </span><code>main</code>
                 </p>
                 <div class="review-file">
                   <svg class="icon"><use href="#i-file" /></svg
-                  ><span>getting-started.md</span
+                  ><span>Как создать первую форму</span
                   ><span class="diff-stat" id="review-stat"></span>
                 </div>
                 <div class="review-callout">
                   <svg class="icon"><use href="#i-check" /></svg>
                   <p>
-                    Команда проверяет правки.<br /><span
-                      >Слияние происходит в GitHub или GitLab.</span
+                    Правки переданы на проверку.<br /><span
+                      >После одобрения команда принимает их в GitHub или GitLab. Сайт обновляет настроенная публикация проекта.</span
                     >
                   </p>
                 </div>
@@ -332,15 +318,28 @@
             ><span class="comment-spark">✳</span>
           </div>
           <p class="demo-caption">
-            <span aria-hidden="true">↳</span> Это живой пример. Попробуйте
-            изменить текст.<button id="reset-demo" type="button">
+            <span aria-hidden="true">↳</span> Интерактивный пример: измените текст и пройдите до проверки.
+            Он не подключён к вашему проекту.<button id="reset-demo" type="button">
               Сбросить
             </button>
           </p>
         </div>
       </section>
+      <section class="knowledge-section container" aria-labelledby="knowledge-title">
+        <div class="knowledge-intro">
+          <p class="eyebrow">ВАШ DOCUSAURUS + PUSHDOCS</p>
+          <h2 id="knowledge-title">Сайт на Docusaurus.<br />Управление контентом в вашей CMS.</h2>
+          <p>Установите PushDocs рядом с вашим проектом и пригласите команду работать над документацией.</p>
+        </div>
+        <div class="knowledge-examples">
+          <article><svg class="icon"><use href="#i-file" /></svg><h3>На вашем сервере</h3><p>Разверните CMS через Docker Compose. Вы управляете установкой, подключениями и доступом команды.</p></article>
+          <article><svg class="icon"><use href="#i-file" /></svg><h3>Для проектов Docusaurus</h3><p>Работайте с существующими страницами Markdown и MDX, изображениями и несколькими проектами в одной CMS.</p></article>
+          <article><svg class="icon"><use href="#i-branch" /></svg><h3>С вашим Git-процессом</h3><p>Исходники хранятся в GitHub или GitLab. Команда проверяет правки, а ваш процесс публикации обновляет сайт.</p></article>
+        </div>
+        <p class="knowledge-usecases">Для базы знаний конструктора, помощи пользователям и внутренних инструкций команды.</p>
+      </section>
       <div class="ecosystem container">
-        <p>Вписывается<br />в ваш процесс</p>
+        <p>Работает с вашим<br />проектом</p>
         <span class="ecosystem-brand docusaurus"
           ><span class="dino-mark" aria-hidden="true">D</span>Docusaurus</span
         ><span class="ecosystem-brand"
@@ -374,14 +373,13 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">ОТ ЧЕРНОВИКА ДО РЕВЬЮ</p>
+              <p class="eyebrow">ОТ ИНСТРУКЦИИ ДО ПУБЛИКАЦИИ</p>
               <h2 id="workflow-title">
-                Меньше переключений.<br />Больше написанного.
+                Написали. Проверили.<br />Передали на публикацию.
               </h2>
             </div>
             <p>
-              Редактор работает с текстом.<br />Разработчик проверяет
-              изменения.<br />Документация остаётся в репозитории.
+              Автор готовит материал в PushDocs.<br />Команда проверяет изменения.<br />Ваш сайт публикует одобренную версию.
             </p>
           </div>
           <div class="workflow-grid">
@@ -403,11 +401,11 @@
               </div>
               <div class="step-title">
                 <span>01</span>
-                <h3>Подключите проект</h3>
+                <h3>Разверните и подключите</h3>
               </div>
               <p>
-                Укажите репозиторий Docusaurus в GitHub или GitLab. PushDocs
-                загрузит документы и найдёт ветки.
+                Установите CMS на своём сервере через Docker Compose. Подключите
+                репозиторий Docusaurus в GitHub или GitLab и пригласите редакторов.
               </p>
             </article>
             <article class="workflow-step">
@@ -423,11 +421,11 @@
               </div>
               <div class="step-title">
                 <span>02</span>
-                <h3>Пишите и обсуждайте</h3>
+                <h3>Подготовьте инструкцию</h3>
               </div>
               <p>
-                Редактируйте текст, добавляйте изображения и оставляйте
-                комментарии. Черновики сохраняются автоматически.
+                Создайте страницу, оформите заголовки и списки, добавьте изображения.
+                Посмотрите результат и обсудите текст с коллегами. Черновик сохраняется автоматически.
               </p>
             </article>
             <article class="workflow-step">
@@ -436,18 +434,18 @@
                   <span class="removed">− Инструкция скоро появится.</span
                   ><span class="added">+ Вот как всё работает.</span>
                   <div>
-                    <svg class="icon"><use href="#i-branch" /></svg>Готово к
-                    ревью<span class="review-dot"></span>
+                    <svg class="icon"><use href="#i-branch" /></svg>На
+                    проверку<span class="review-dot"></span>
                   </div>
                 </div>
               </div>
               <div class="step-title">
                 <span>03</span>
-                <h3>Отправьте на ревью</h3>
+                <h3>Передайте на публикацию</h3>
               </div>
               <p>
-                Проверьте разницу между версиями и создайте PR или MR. Команда
-                завершит ревью у Git-провайдера.
+                Отправьте правки на проверку. PushDocs создаст запрос в GitHub или GitLab.
+                После одобрения команда принимает изменения, а настроенный процесс проекта обновляет сайт.
               </p>
             </article>
           </div>
@@ -567,10 +565,10 @@
             <p class="eyebrow">
               <span class="status-dot"></span>ВАШ СЕРВЕР. ВАШИ ПРАВИЛА.
             </p>
-            <h2 id="start-title">Дайте команде<br />место для доков.</h2>
+            <h2 id="start-title">Разверните CMS<br />на своём сервере.</h2>
             <p>
-              Разверните PushDocs через Docker Compose.<br />Подключите первый
-              проект и начните писать.
+              Установите PushDocs через Docker Compose. Подключите ваш проект
+              Docusaurus и дайте команде доступ к редактору.
             </p>
             <a
               class="button dark"
@@ -600,9 +598,7 @@
               aria-label="Команды запуска, можно прокрутить по горизонтали"
             ><code id="install-command">git clone https://github.com/PushDocs/PushDocs.git
 cd PushDocs
-export PUSHDOCS_SESSION_PEPPER="$(openssl rand -hex 32)"
-export PUSHDOCS_ENCRYPTION_KEY="$(openssl rand -base64 32)"
-docker compose up --build</code></pre>
+./scripts/install.sh http://localhost:8080</code></pre>
             <div class="terminal-footer">
               <span class="tiny-dot"></span>После запуска откройте
               <a
@@ -627,8 +623,7 @@ docker compose up --build</code></pre>
         <div>
           <p class="eyebrow">ЕЩЁ НЕМНОГО ДЕТАЛЕЙ</p>
           <h2 id="faq-title">
-            До первого<br />
-            push.
+            Перед началом<br />работы.
           </h2>
           <a
             class="text-link"
@@ -641,17 +636,37 @@ docker compose up --build</code></pre>
         </div>
         <div class="faq-list">
           <details>
+            <summary>Что означает self-hosted?<span aria-hidden="true">+</span></summary>
+            <p>Вы устанавливаете PushDocs на своём сервере и сами управляете CMS:
+              обновлениями, резервными копиями, подключениями к репозиториям и доступами пользователей.
+              Документы хранятся в вашем GitHub или GitLab, черновики и комментарии — на сервере PushDocs.</p>
+          </details>
+          <details>
+            <summary>Как PushDocs работает с Docusaurus?<span aria-hidden="true">+</span></summary>
+            <p>Docusaurus отвечает за сайт документации, а PushDocs — за редактирование его содержимого.
+              CMS подключает репозиторий проекта и позволяет команде работать со страницами Markdown и MDX,
+              добавлять вложения и отправлять изменения на проверку. Публикация сайта остаётся в вашем проекте.</p>
+          </details>
+          <details>
             <summary>
-              Для каких проектов подходит PushDocs?<span aria-hidden="true"
+              Могу ли я создать базу знаний для своего продукта?<span aria-hidden="true"
                 >+</span
               >
             </summary>
             <p>
-              Для документации на Docusaurus, исходники которой хранятся в
-              GitHub или GitLab. PushDocs работает с Markdown и MDX. В одной
-              установке можно подключить несколько проектов с отдельными
-              участниками и ролями.
+              Да, если её сайт работает на Docusaurus. Например, это может быть база знаний
+              для конструктора, инструкции сервиса или руководство для команды.
+              Сначала администратор создаёт или подключает проект Docusaurus
+              в GitHub или GitLab, затем авторы работают со страницами в PushDocs.
+              Сам сайт базы знаний разворачивается отдельно.
             </p>
+          </details>
+          <details>
+            <summary>Что происходит после отправки правок?<span aria-hidden="true">+</span></summary>
+            <p>PushDocs отправляет документы и вложения в репозиторий и создаёт запрос на проверку:
+              pull request в GitHub или merge request в GitLab. Команда принимает изменения там.
+              Затем существующий процесс публикации вашего проекта обновляет сайт.
+              Сохранение черновика в PushDocs само по себе не публикует страницу.</p>
           </details>
           <details>
             <summary>
@@ -665,15 +680,16 @@ docker compose up --build</code></pre>
           </details>
           <details>
             <summary>
-              Нужно ли редактору пользоваться терминалом?<span
+              Можно ли редактировать текст как в Word?<span
                 aria-hidden="true"
                 >+</span
               >
             </summary>
             <p>
-              Для повседневной работы терминал не нужен. Можно редактировать
-              исходный Markdown или MDX, добавлять файлы, сравнивать версии и
-              создавать PR или MR в браузере. Первичную установку и подключения
+              В текущей версии текст редактируется в Markdown или MDX: есть кнопки
+              для заголовков, жирного текста и таблиц, загрузка изображений
+              и предпросмотр страницы. Это не полный визуальный редактор Word.
+              Для ежедневной работы терминал не нужен; установку и подключения
               настраивает администратор.
             </p>
           </details>
@@ -685,9 +701,8 @@ docker compose up --build</code></pre>
             </summary>
             <p>
               Быстрый предпросмотр показывает Markdown без выполнения
-              MDX-компонентов. Экспериментальный изолированный preview runner
-              может собрать настоящий Docusaurus-сайт с черновиками.
-              Администратор включает и настраивает его отдельно.
+              MDX-компонентов. Администратор также может настроить живой предпросмотр
+              Docusaurus-сайта с сохранёнными черновиками и вложениями.
             </p>
           </details>
           <details>
@@ -719,7 +734,7 @@ docker compose up --build</code></pre>
             >pushdocs</span
           ></a
         >
-        <p>Документация, над которой удобно работать.</p>
+        <p>Self-hosted CMS для Docusaurus.</p>
         <div>
           <a
             href="https://github.com/PushDocs/PushDocs"

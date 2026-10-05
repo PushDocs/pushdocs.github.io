@@ -1,7 +1,7 @@
 const source = document.querySelector("#demo-source");
 const initialDraft = source.value;
-const originalDocument = "# Начало работы\n\nИнструкция скоро появится.";
-const storageKey = "pushdocs-landing-draft-v1";
+const originalDocument = "# Как создать первую форму\n\nИнструкция скоро появится.";
+const storageKey = "pushdocs-landing-draft-v2";
 const announcement = document.querySelector("#announcement");
 const preview = document.querySelector("#markdown-preview");
 const previewToggle = document.querySelector("#preview-toggle");
@@ -156,11 +156,11 @@ document
 function setPreview(open) {
   previewOpen = open;
   if (open) renderPreview();
-  source.hidden = open;
-  document.querySelector(".line-numbers").hidden = open;
-  preview.hidden = !open;
+  document.querySelector(".demo-input").hidden = open;
+  document.querySelector(".editor-body").classList.toggle("preview-only", open);
+  document.querySelector(".demo-format").hidden = open;
   previewToggle.setAttribute("aria-pressed", String(open));
-  previewToggle.textContent = open ? "К исходнику ‹/›" : "Предпросмотр ◉";
+  previewToggle.textContent = open ? "К редактированию" : "Только предпросмотр ◉";
 }
 previewToggle.addEventListener("click", () => setPreview(!previewOpen));
 
@@ -177,7 +177,8 @@ function updateDraftStatus() {
     ),
   );
 }
-source.addEventListener("input", () => {
+function saveDraft() {
+  renderPreview();
   try {
     localStorage.setItem(storageKey, source.value);
     storageAvailable = true;
@@ -185,6 +186,27 @@ source.addEventListener("input", () => {
     storageAvailable = false;
   }
   updateDraftStatus();
+}
+source.addEventListener("input", saveDraft);
+document.querySelectorAll("[data-format]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const start = source.selectionStart;
+    const end = source.selectionEnd;
+    const selected = source.value.slice(start, end);
+    const formats = {
+      heading: `\n## ${selected || "Заголовок"}\n`,
+      bold: `**${selected || "важный текст"}**`,
+      list: `\n- ${selected || "Новый пункт"}\n`,
+    };
+    const insertion = formats[button.dataset.format];
+    if (source.value.length - (end - start) + insertion.length > source.maxLength) {
+      announce("В примере можно ввести до 5000 символов.");
+      return;
+    }
+    source.setRangeText(insertion, start, end, "select");
+    source.focus({ preventScroll: true });
+    saveDraft();
+  });
 });
 document.querySelector("#reset-demo").addEventListener("click", () => {
   source.value = initialDraft;
@@ -194,6 +216,7 @@ document.querySelector("#reset-demo").addEventListener("click", () => {
     /* Editing still works without storage. */
   }
   setPreview(false);
+  renderPreview();
   selectTab("editor");
   updateDraftStatus();
   source.focus({ preventScroll: true });
@@ -260,4 +283,5 @@ copyButton.addEventListener("click", async () => {
 });
 document.querySelector("#year").textContent = new Date().getFullYear();
 updateDraftStatus();
+renderPreview();
 renderDiff();
