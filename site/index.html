@@ -122,34 +122,18 @@
     <main id="main">
       <section class="hero container" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow">
-            <span class="status-dot"></span> ОТКРЫТЫЙ КОД · ВАШ СЕРВЕР
-          </div>
           <h1 id="hero-title">
             Self-hosted<br />CMS для<br /><span class="git-word">Docusaurus.</span>
           </h1>
           <p class="hero-description">
-            Разверните PushDocs на своём сервере и дайте команде
-            редактор для вашего сайта на Docusaurus. Пишите инструкции,
-            добавляйте изображения и отправляйте изменения на проверку.
+            Редактируйте документацию с командой: пишите инструкции,
+            добавляйте изображения и проверяйте результат перед публикацией.
           </p>
-          <p class="hero-context">Подключите существующий репозиторий в GitHub или GitLab.
-            Документы остаются в Git, а черновики и доступы — под вашим управлением.</p>
           <div class="hero-actions">
             <a class="button primary" href="#start">Развернуть CMS<svg class="icon"><use href="#i-arrow" /></svg></a>
-            <a class="text-link" href="#demo">Попробовать редактор</a>
-          </div>
-          <div class="hero-note">
-            <svg class="icon"><use href="#i-check" /></svg>Ваш сервер
-            <span aria-hidden="true">/</span> Ваши репозитории
-            <span aria-hidden="true">/</span> Apache 2.0
           </div>
         </div>
         <div class="hero-visual" id="demo">
-          <div class="floating-file" aria-hidden="true">
-            <svg class="icon"><use href="#i-file" /></svg
-            >Инструкция для пользователей<span>Черновик</span>
-          </div>
           <div class="demo-window">
             <div class="demo-topbar">
               <span class="demo-brand"
@@ -299,7 +283,7 @@
                   <svg class="icon"><use href="#i-check" /></svg>
                   <p>
                     Правки переданы на проверку.<br /><span
-                      >После одобрения команда принимает их в GitHub или GitLab. Сайт обновляет настроенная публикация проекта.</span
+                      >Команда проверяет изменения перед публикацией.</span
                     >
                   </p>
                 </div>
@@ -312,31 +296,10 @@
               </div>
             </div>
           </div>
-          <div class="floating-comment" aria-hidden="true">
-            <span class="comment-avatar">М</span
-            ><span>Теперь всё понятно!<small>Комментарий команды</small></span
-            ><span class="comment-spark">✳</span>
+          <div class="demo-reset">
+            <button id="reset-demo" type="button">Сбросить</button>
           </div>
-          <p class="demo-caption">
-            <span aria-hidden="true">↳</span> Интерактивный пример: измените текст и пройдите до проверки.
-            Он не подключён к вашему проекту.<button id="reset-demo" type="button">
-              Сбросить
-            </button>
-          </p>
         </div>
-      </section>
-      <section class="knowledge-section container" aria-labelledby="knowledge-title">
-        <div class="knowledge-intro">
-          <p class="eyebrow">ВАШ DOCUSAURUS + PUSHDOCS</p>
-          <h2 id="knowledge-title">Сайт на Docusaurus.<br />Управление контентом в вашей CMS.</h2>
-          <p>Установите PushDocs рядом с вашим проектом и пригласите команду работать над документацией.</p>
-        </div>
-        <div class="knowledge-examples">
-          <article><svg class="icon"><use href="#i-file" /></svg><h3>На вашем сервере</h3><p>Разверните CMS через Docker Compose. Вы управляете установкой, подключениями и доступом команды.</p></article>
-          <article><svg class="icon"><use href="#i-file" /></svg><h3>Для проектов Docusaurus</h3><p>Работайте с существующими страницами Markdown и MDX, изображениями и несколькими проектами в одной CMS.</p></article>
-          <article><svg class="icon"><use href="#i-branch" /></svg><h3>С вашим Git-процессом</h3><p>Исходники хранятся в GitHub или GitLab. Команда проверяет правки, а ваш процесс публикации обновляет сайт.</p></article>
-        </div>
-        <p class="knowledge-usecases">Для базы знаний конструктора, помощи пользователям и внутренних инструкций команды.</p>
       </section>
       <div class="ecosystem container">
         <p>Работает с вашим<br />проектом</p>
@@ -373,14 +336,10 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">ОТ ИНСТРУКЦИИ ДО ПУБЛИКАЦИИ</p>
               <h2 id="workflow-title">
-                Написали. Проверили.<br />Передали на публикацию.
+                Как это работает
               </h2>
             </div>
-            <p>
-              Автор готовит материал в PushDocs.<br />Команда проверяет изменения.<br />Ваш сайт публикует одобренную версию.
-            </p>
           </div>
           <div class="workflow-grid">
             <article class="workflow-step">
@@ -401,11 +360,11 @@
               </div>
               <div class="step-title">
                 <span>01</span>
-                <h3>Разверните и подключите</h3>
+                <h3>Подключите проект</h3>
               </div>
               <p>
-                Установите CMS на своём сервере через Docker Compose. Подключите
-                репозиторий Docusaurus в GitHub или GitLab и пригласите редакторов.
+                Подключите репозиторий в GitHub или GitLab.
+                Документы появятся в CMS, где вы сможете пригласить редакторов.
               </p>
             </article>
             <article class="workflow-step">
@@ -444,8 +403,8 @@
                 <h3>Передайте на публикацию</h3>
               </div>
               <p>
-                Отправьте правки на проверку. PushDocs создаст запрос в GitHub или GitLab.
-                После одобрения команда принимает изменения, а настроенный процесс проекта обновляет сайт.
+                Проверьте разницу между версиями и отправьте правки на проверку.
+                После одобрения команда принимает изменения и публикует сайт.
               </p>
             </article>
           </div>
@@ -458,8 +417,7 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow">ПРОСТРАНСТВО ДЛЯ КОМАНДЫ</p>
-            <h2 id="features-title">Всё вокруг текста.<br />Всё под рукой.</h2>
+            <h2 id="features-title">Возможности</h2>
           </div>
         </div>
         <div class="feature-grid">
@@ -545,13 +503,13 @@
           </div>
           <div>
             <span class="note-icon">‹/›</span>
-            <h3>Ваш Markdown и MDX</h3>
-            <p>Исходные файлы остаются в вашем репозитории.</p>
+            <h3>Компоненты MDX</h3>
+            <p>Вставляйте компоненты, настроенные для вашего проекта.</p>
           </div>
           <div>
             <span class="note-icon">◷</span>
-            <h3>Черновик до коммита</h3>
-            <p>Сохранение текста не отправляет его в Git.</p>
+            <h3>Комментарии</h3>
+            <p>Обсуждайте документы с коллегами прямо в CMS.</p>
           </div>
         </div>
       </section>
@@ -562,13 +520,10 @@
       >
         <div class="start-card">
           <div class="start-copy">
-            <p class="eyebrow">
-              <span class="status-dot"></span>ВАШ СЕРВЕР. ВАШИ ПРАВИЛА.
-            </p>
             <h2 id="start-title">Разверните CMS<br />на своём сервере.</h2>
             <p>
-              Установите PushDocs через Docker Compose. Подключите ваш проект
-              Docusaurus и дайте команде доступ к редактору.
+              Для установки нужны Docker и Git. Начните с локального запуска
+              или следуйте инструкции для сервера.
             </p>
             <a
               class="button dark"
@@ -608,10 +563,6 @@ cd PushDocs
                 >localhost:8080 ↗</a
               >
             </div>
-            <p class="terminal-note">
-              Для локального знакомства нужны Docker и Git. Настройки для
-              сервера описаны в инструкции.
-            </p>
           </div>
         </div>
       </section>
@@ -621,9 +572,8 @@ cd PushDocs
         aria-labelledby="faq-title"
       >
         <div>
-          <p class="eyebrow">ЕЩЁ НЕМНОГО ДЕТАЛЕЙ</p>
           <h2 id="faq-title">
-            Перед началом<br />работы.
+            Вопросы
           </h2>
           <a
             class="text-link"
@@ -639,13 +589,12 @@ cd PushDocs
             <summary>Что означает self-hosted?<span aria-hidden="true">+</span></summary>
             <p>Вы устанавливаете PushDocs на своём сервере и сами управляете CMS:
               обновлениями, резервными копиями, подключениями к репозиториям и доступами пользователей.
-              Документы хранятся в вашем GitHub или GitLab, черновики и комментарии — на сервере PushDocs.</p>
+</p>
           </details>
           <details>
             <summary>Как PushDocs работает с Docusaurus?<span aria-hidden="true">+</span></summary>
-            <p>Docusaurus отвечает за сайт документации, а PushDocs — за редактирование его содержимого.
-              CMS подключает репозиторий проекта и позволяет команде работать со страницами Markdown и MDX,
-              добавлять вложения и отправлять изменения на проверку. Публикация сайта остаётся в вашем проекте.</p>
+            <p>Docusaurus отвечает за сайт документации, а PushDocs редактирует его содержимое.
+              CMS работает со страницами Markdown и MDX в существующем проекте.</p>
           </details>
           <details>
             <summary>
@@ -654,11 +603,9 @@ cd PushDocs
               >
             </summary>
             <p>
-              Да, если её сайт работает на Docusaurus. Например, это может быть база знаний
-              для конструктора, инструкции сервиса или руководство для команды.
-              Сначала администратор создаёт или подключает проект Docusaurus
-              в GitHub или GitLab, затем авторы работают со страницами в PushDocs.
-              Сам сайт базы знаний разворачивается отдельно.
+              Да. Сначала создайте сайт на Docusaurus, затем подключите его к PushDocs.
+              Например, это может быть база знаний конструктора, помощь пользователям
+              или внутреннее руководство команды.
             </p>
           </details>
           <details>
@@ -712,10 +659,8 @@ cd PushDocs
               >
             </summary>
             <p>
-              В MVP доступны редактор, черновики, медиафайлы, комментарии,
-              сравнение версий и отправка PR или MR. Слияние выполняется в
-              GitHub или GitLab. Совместного посимвольного редактирования нет.
-              Актуальные ограничения перечислены в
+              Слияние выполняется в GitHub или GitLab.
+              Актуальные возможности и ограничения перечислены в
               <a
                 href="https://github.com/PushDocs/PushDocs#current-limits"
                 target="_blank"
@@ -734,7 +679,6 @@ cd PushDocs
             >pushdocs</span
           ></a
         >
-        <p>Self-hosted CMS для Docusaurus.</p>
         <div>
           <a
             href="https://github.com/PushDocs/PushDocs"
@@ -753,8 +697,7 @@ cd PushDocs
         push<span>docs</span><span class="footer-arrow">↗</span>
       </div>
       <div class="footer-bottom">
-        <span>Сделано для тех, кто пишет.</span
-        ><span>PushDocs © <span id="year">2026</span></span>
+        <span>PushDocs © <span id="year">2026</span></span>
       </div>
     </footer>
     <div

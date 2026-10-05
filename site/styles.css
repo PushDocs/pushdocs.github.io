@@ -244,13 +244,6 @@ textarea:focus-visible,
   margin: 0 0 28px;
   letter-spacing: -0.2px;
 }
-.hero-context {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-  max-width: 450px;
-  margin: -12px 0 28px;
-}
 .demo-format {
   display: flex;
   align-items: center;
@@ -271,15 +264,6 @@ textarea:focus-visible,
 .demo-input { border-right: 1px solid var(--line); background: #fcfbfe; }
 .demo-input label, .preview-label { padding: 10px 16px 0; font-size: 9px; color: var(--muted); }
 .preview-only .demo-output { width: 100%; }
-.knowledge-section { padding: 35px 0 50px; border-top: 1px solid var(--line); }
-.knowledge-intro h2 { font: 500 clamp(22px, 2.3vw, 32px)/1.5 var(--display); letter-spacing: -1px; margin: 0; }
-.knowledge-intro > p:last-child { font-size: 15px; color: var(--muted); margin-bottom: 30px; }
-.knowledge-usecases { margin: 30px 0 0; font-size: 13px; color: var(--muted); }
-.knowledge-examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.knowledge-examples article { border-left: 2px solid #c8b8f4; padding-left: 20px; }
-.knowledge-examples .icon { color: var(--violet); }
-.knowledge-examples h3 { font-size: 16px; margin: 10px 0 8px; }
-.knowledge-examples p { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0; }
 .hero-actions {
   display: flex;
   align-items: center;
@@ -324,23 +308,6 @@ textarea:focus-visible,
 .text-link .icon {
   width: 18px;
   height: 18px;
-}
-.hero-note {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 25px;
-}
-.hero-note > .icon {
-  width: 15px;
-  height: 15px;
-  color: var(--violet);
-}
-.hero-note > span {
-  color: #b1a7c5;
 }
 .hero-visual {
   position: relative;
@@ -600,103 +567,6 @@ textarea:focus-visible,
 }
 .mini-button:hover {
   background: var(--violet-dark);
-}
-.floating-file {
-  position: absolute;
-  top: -25px;
-  right: 18px;
-  z-index: 2;
-  transform: rotate(5deg);
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 11px 16px;
-  border: 1px solid #ded6ef;
-  background: #fff;
-  border-radius: 8px;
-  font:
-    10px ui-monospace,
-    SFMono-Regular,
-    Consolas,
-    monospace;
-  box-shadow: 0 5px 18px #39205d0c;
-  pointer-events: none;
-}
-.floating-file .icon {
-  width: 15px;
-  height: 15px;
-  color: var(--violet);
-}
-.floating-file > span {
-  background: #e9f3df;
-  padding: 3px 6px;
-  color: #4e732c;
-  border-radius: 3px;
-  font-size: 9px;
-}
-.floating-comment {
-  position: absolute;
-  right: -20px;
-  bottom: -42px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  background: var(--lime);
-  padding: 12px 17px;
-  border-radius: 10px;
-  transform: rotate(4deg);
-  box-shadow: 0 7px 20px #53572215;
-  pointer-events: none;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid #c6e283;
-}
-.comment-avatar {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  background: white;
-  border-radius: 50%;
-  font-size: 13px;
-}
-.floating-comment small {
-  display: block;
-  font-size: 9px;
-  font-weight: 400;
-  color: #56623d;
-  margin-top: 2px;
-}
-.comment-spark {
-  font-size: 32px;
-  line-height: 1;
-  color: #53632a;
-  margin-left: 12px;
-}
-.demo-caption {
-  max-width: calc(100% - 260px);
-  flex-wrap: wrap;
-  font-size: 10px;
-  margin: 25px 0 0 4px;
-  color: #6f607f;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.demo-caption > span {
-  font-size: 21px;
-  color: #9486af;
-  line-height: 1;
-}
-.demo-caption button {
-  font-size: 10px;
-  padding: 3px;
-  background: none;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: #6f607f;
-  margin-left: auto;
 }
 .diff-content {
   height: 265px;
@@ -1455,13 +1325,6 @@ h2 {
 .terminal-footer a {
   color: var(--lime);
 }
-.terminal-note {
-  padding: 0 17px 16px;
-  margin: 0;
-  font-size: 9px;
-  color: #c1b1d5;
-  line-height: 1.7;
-}
 .terminal-header button:focus-visible {
   outline-color: var(--lime);
 }
@@ -1621,10 +1484,6 @@ h2 {
   .hero-actions .text-link {
     font-size: 12px;
   }
-  .hero-note {
-    font-size: 9px;
-    gap: 6px;
-  }
   .branch-label {
     font-size: 8px;
   }
@@ -1633,16 +1492,6 @@ h2 {
   }
   .hero-visual::before {
     right: -20px;
-  }
-  .floating-comment {
-    right: -9px;
-  }
-  .demo-caption {
-    font-size: 8px;
-    gap: 3px;
-  }
-  .demo-caption button {
-    font-size: 9px;
   }
   .ecosystem-brand {
     font-size: 16px;
@@ -1685,10 +1534,6 @@ h2 {
     font-size: 8px;
     letter-spacing: 1.1px;
   }
-  .floating-file {
-    top: -24px;
-    font-size: 9px;
-  }
   .demo-tabs button {
     font-size: 10px;
   }
@@ -1726,9 +1571,6 @@ h2 {
   }
   .hero .eyebrow,
   .hero-actions,
-  .hero-note {
-    justify-content: center;
-  }
   .hero .eyebrow {
     font-size: 10px;
     letter-spacing: 1.3px;
@@ -1754,18 +1596,12 @@ h2 {
   .hero-actions .text-link {
     font-size: 14px;
   }
-  .hero-note {
-    font-size: 10px;
-  }
   .hero-visual {
     width: min(550px, 100%);
     margin-inline: auto;
   }
   .demo-tabs button {
     font-size: 12px;
-  }
-  .demo-caption {
-    font-size: 10px;
   }
   .editor-bottom {
     font-size: 9px;
@@ -1946,9 +1782,6 @@ h2 {
   }
   .terminal-header,
   .terminal-footer,
-  .terminal-note {
-    font-size: 10px;
-  }
   .faq {
     grid-template-columns: 0.85fr 1.4fr;
     gap: 35px;
@@ -2030,9 +1863,6 @@ h2 {
   }
   .hero .eyebrow,
   .hero-actions,
-  .hero-note {
-    justify-content: flex-start;
-  }
   .hero .eyebrow {
     font-size: 8px;
     letter-spacing: 0.9px;
@@ -2073,11 +1903,6 @@ h2 {
   }
   .hero-actions .text-link {
     font-size: 12px;
-  }
-  .hero-note {
-    font-size: 8px;
-    gap: 7px;
-    margin-top: 19px;
   }
   .hero-visual {
     width: 100%;
@@ -2164,52 +1989,6 @@ h2 {
   .mini-button .icon {
     width: 12px;
     height: 12px;
-  }
-  .floating-file {
-    top: -25px;
-    right: 8px;
-    font-size: 8px;
-    padding: 8px 10px;
-    gap: 7px;
-  }
-  .floating-file .icon {
-    width: 13px;
-    height: 13px;
-  }
-  .floating-file > span {
-    font-size: 7px;
-  }
-  .floating-comment {
-    bottom: -34px;
-    right: -4px;
-    padding: 8px 12px;
-    gap: 8px;
-    font-size: 10px;
-  }
-  .comment-avatar {
-    width: 26px;
-    height: 26px;
-    font-size: 10px;
-  }
-  .floating-comment small {
-    font-size: 8px;
-  }
-  .comment-spark {
-    font-size: 26px;
-    margin-left: 6px;
-  }
-  .demo-caption {
-    max-width: calc(100% - 175px);
-    font-size: 8px;
-    margin-top: 32px;
-    line-height: 1.5;
-    gap: 3px;
-  }
-  .demo-caption button {
-    font-size: 8px;
-  }
-  .demo-caption > span {
-    font-size: 18px;
   }
   .review-content {
     height: 322px;
@@ -2469,10 +2248,6 @@ h2 {
     gap: 5px;
     padding: 12px;
   }
-  .terminal-note {
-    font-size: 8px;
-    padding: 0 12px 14px;
-  }
   .faq {
     grid-template-columns: 1fr;
     gap: 27px;
@@ -2530,7 +2305,6 @@ h2 {
 }
 @media (max-width: 600px) {
   .hero-actions { gap: 18px; flex-wrap: wrap; }
-  .hero-context { font-size: 12px; }
   .editor-body { height: auto; min-height: 340px; flex-direction: column; }
   .demo-input, .demo-output { width: 100%; }
   .demo-input { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -2538,11 +2312,6 @@ h2 {
   .demo-output { min-height: 230px; }
   .markdown-preview { max-height: 330px; }
   .demo-format > span { font-size: 8px; }
-  .knowledge-examples { grid-template-columns: 1fr; gap: 24px; }
-  .knowledge-intro h2 { font-size: 21px; }
-  .knowledge-intro h2 br { display: none; }
-  .knowledge-intro > p:last-child { font-size: 13px; }
-  .knowledge-section { padding-top: 30px; padding-bottom: 35px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -2557,4 +2326,19 @@ h2 {
   .demo-window {
     transform: none;
   }
+}
+
+.demo-reset {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.demo-reset button {
+  background: none;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 8px;
+}
+.demo-reset button:hover {
+  color: var(--violet-dark);
 }
